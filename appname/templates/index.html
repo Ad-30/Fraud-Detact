@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fraud Detection</title>
+
+    <style media="screen">
+      body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color:#1434A4;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid #ccc;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3e8e41;
+}
+
+.result {
+    width: 50%;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.fraud {
+    color: red;
+}
+
+.not-fraud {
+    color: green;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Fraud Detection</h1>
+
+    <div class="result">
+        {% if result == 1 %}
+        <h2 class="fraud">~~Fraudulent Transaction~~</h2>
+        {% endif %}
+        {% if result == 0%}
+        <h2 class="not-fraud">Not Fraudulent Transaction</h2>
+        {% endif %}
+    </div>
+  <p align="center">Below given values are values for a Fraudulent Transaction</p>
+    <form action="{% url 'detect_fraud' %}" method="post">
+        {% csrf_token %}
+        <label for="input23">Time</label>
+        <input type="text" name="input23" id="input1" value="406" required><br><br>
+
+        <label for="input1">Input 1:</label>
+        <input type="text" name="input1" id="input2" value="-2.3122265423263" required><br><br>
+        <label for="input2">Input 2:</label>
+        <input type="text" name="input2" id="input3" value="1.95199201064158" required><br><br>
+
+        <label for="input3">Input 3:</label>
+        <input type="text" name="input3" id="input4" value="-1.60985073229769" required><br><br>
+        <label for="input4">Input 4:</label>
+        <input type="text" name="input4" id="input5" value="3.9979055875468" required><br><br>
+        <label for="input5">Input 5:</label>
+        <input type="text" name="input5" id="input6" value="-0.522187864667764" required><br><br>
+        <label for="input6">Input 6:</label>
+        <input type="text" name="input6" id="input7" value="-1.42654531920595" required><br><br>
+        <label for="input7">Input 7:</label>
+        <input type="text" name="input7" id="input8" value="-2.53738730624579" required><br><br>
+        <label for="input8">Input 8:</label>
+        <input type="text" name="input8" id="input9" value="1.39165724829804" required><br><br>
+        <label for="input9">Input 9:</label>
+        <input type="text" name="input9" id="input10" value="-2.77008927719433" required><br><br>
+        <label for="input10">Input 10:</label>
+        <input type="text" name="input10" id="input11" value="-2.77227214465915" required><br><br>
+        <label for="input11">Input 11:</label>
+        <input type="text" name="input11" id="input12" value="3.20203320709635" required><br><br>
+        <label for="input12">Input 12:</label>
+        <input type="text" name="input12" id="input13" value="-2.89990738849473" required><br><br>
+        <label for="input13">Input 13:</label>
+        <input type="text" name="input13" id="input14" value="-0.595221881324605" required><br><br>
+        <label for="input14">Input 14:</label>
+        <input type="text" name="input14" id="input15" value="-4.28925378244217" required><br><br>
+        <label for="input15">Input 15:</label>
+        <input type="text" name="input15" id="input16" value="0.389724120274487" required><br><br>
+        <label for="input16">Input 16:</label>
+        <input type="text" name="input16" id="input17" value="-1.14074717980657" required><br><br>
+        <label for="input17">Input 17:</label>
+        <input type="text" name="input17" id="input18" value="-2.83005567450437" required><br><br>
+        <label for="input18">Input 18:</label>
+        <input type="text" name="input18" id="input19" value="-0.0168224681808257" required><br><br>
+        <label for="input19">Input 19:</label>
+        <input type="text" name="input19" id="input20" value="0.416955705037907" required><br><br>
+        <label for="input20">Input 20:</label>
+        <input type="text" name="input20" id="input21" value="0.126910559061474" required><br><br>
+        <label for="input21">Input 21:</label>
+        <input type="text" name="input21" id="input22" value="0.517232370861764" required><br><br>
+        <label for="input22">Input 22:</label>
+        <input type="text" name="input22" id="input23" value="-0.0350493686052974" required><br><br>
+        <label for="input23">Input 23:</label>
+        <input type="text" name="input23" id="input24" value="-0.465211076182388" required><br><br>
+        <label for="input23">Input 24:</label>
+        <input type="text" name="input24" id="input25" value="0.320198198514526" required><br><br>
+        <label for="input23">Input 25:</label>
+        <input type="text" name="input25" id="input26" value="0.0445191674731724" required><br><br>
+        <label for="input23">Input 26:</label>
+        <input type="text" name="input26" id="input27" value="0.177839798284401" required><br><br>
+        <label for="input23">Input 27:</label>
+        <input type="text" name="input27" id="input28" value="0.261145002567677" required><br><br>
+        <label for="input23">Input 28:</label>
+        <input type="text" name="input28" id="input29" value="-0.143275874698919" required><br><br>
+        <label for="input23">Amount</label>
+        <input type="text" name="input30" id="input30" value="0" placeholder="0" required><br><br>
+        <button type="submit">Detect Fraud</button>
+    </form>
+
+</body>
+</html>

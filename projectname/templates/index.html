@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fraud Detection</title>
+
+    <style media="screen">
+      body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid #ccc;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3e8e41;
+}
+
+.result {
+    width: 50%;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.fraud {
+    color: red;
+}
+
+.not-fraud {
+    color: green;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Fraud Detection</h1>
+    <form action="{% url 'detect_fraud' %}" method="post">
+        {% csrf_token %}
+        <label for="input1">Input 1:</label>
+        <input type="text" name="input1" id="input1" required><br><br>
+        <label for="input2">Input 2:</label>
+        <input type="text" name="input2" id="input2" required><br><br>
+        <button type="submit">Detect Fraud</button>
+    </form>
+    {% if result %}
+    <div class="result">
+        {% if result == 'Fraudulent' %}
+        <h2 class="fraud">Fraudulent</h2>
+        {% else %}
+        <h2 class="not-fraud">Not Fraudulent</h2>
+        {% endif %}
+    </div>
+    {% endif %}
+</body>
+</html>
