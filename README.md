@@ -1,4 +1,4 @@
-# Fraud-Detection algo with 99.88% accuracy 
+# Financial Fraud-Detection algo with 99.88% accuracy 
 Also developed a page based on django framework in python to demonstrate the working of it like how data wil be passed to algorithm predict is it fraudulent transaction or not.
 coloumns:
 [Time] : Number of seconds elapsed between this transaction and the first transaction in the data set.
